@@ -5,7 +5,7 @@ import { useProjectFilters } from "./hooks/useProjectFilters"
 
 function App() {
  
-  const { search, setSearch, filteredProjects } = useProjectFilters(mockProjects);
+  const { search, setSearch, filteredProjects, setStatusFilter, statusFilter } = useProjectFilters(mockProjects);
   
   const totalProjects: number = filteredProjects.length
 
@@ -22,6 +22,16 @@ function App() {
           value={search} 
           onChange={(e) => setSearch(e.target.value)} 
         />
+        <select 
+          className="p-3 border border-gray-300 rounded-lg bg-white shadow-sm outline-none"
+          value={statusFilter}
+          onChange={(e) => setStatusFilter(e.target.value)}
+        >
+          <option value="All">All Statuses</option>
+          <option value="Active">Active</option>
+          <option value="On Hold">On Hold</option>
+          <option value="Completed">Completed</option>
+        </select>
       </div>
 
       
