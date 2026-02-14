@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+td,
+th {
+  padding: 8px;
+  text-align: left;
+}
+tr {
+  border-bottom: 1px solid #ddd;
+}
